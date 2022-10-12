@@ -12,8 +12,8 @@ export const Login = () => {
         navigate("/home")
     }
 
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     axios.defaults.withCredentials=true
     axios.defaults.baseURL='http://localhost:8000'
