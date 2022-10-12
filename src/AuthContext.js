@@ -5,21 +5,14 @@ export const AuthContext = createContext()
 export const AuthProvider = ({children}) => {
     const [authed, setAuthed] = useState(false)
 
-    const setLoggedIn = () => {
-        console.log('set auth to true')
-        // setAuthed(true)
-    }
-
-    const setLoggedOut = () => {
-        console.log('set auth to false')
-        // setAuthed(false)
+    const updateAuthed = (x) => {
+        setAuthed(x)
     }
 
     return (
         <AuthContext.Provider value={{
-            auth:authed,
-            setLoggedIn:setLoggedIn,
-            setLoggedOut:setLoggedOut
+            authed:authed,
+            updateAuthed:updateAuthed
         }}>
             {children}
         </AuthContext.Provider>

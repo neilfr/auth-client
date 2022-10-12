@@ -2,13 +2,12 @@ import React, {useContext} from 'react'
 import {AuthContext} from "./AuthContext";
 
 const Home = () => {
-    const {auth} = useContext(AuthContext)
-    console.log('auth',auth)
+    const {authed} = useContext(AuthContext)
+    console.log('auth',authed)
     return(
         <div>
             <div>
                 <h1>HOME</h1>
-                <span>{auth.toString()}</span>
             </div>
         </div>
     )

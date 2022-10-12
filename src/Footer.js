@@ -4,13 +4,13 @@ import {useNavigate} from "react-router-dom";
 import {AuthContext} from "./AuthContext";
 
 const Footer = () => {
-    const {setLoggedOut} = useContext(AuthContext)
+    const {updateAuthed, authed} = useContext(AuthContext)
     let navigate = useNavigate()
     const logout = () => {
 
         axios.post('/logout').then(
             (res) => {
-                setLoggedOut()
+                updateAuthed(false)
                 navigate('/login')
             }
         )
@@ -20,6 +20,7 @@ const Footer = () => {
             <div>
                 <button onClick={logout}>Logout</button>
             </div>
+            <span>{authed.toString()}</span>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {AuthContext} from "./AuthContext";
 
 export const Login = () => {
-    const {setLoggedIn } = useContext(AuthContext)
+    const {updateAuthed, authed } = useContext(AuthContext)
 
     let navigate = useNavigate();
 
@@ -39,7 +39,7 @@ export const Login = () => {
                 password: password,
             })
             console.log('login =', login)
-            setLoggedIn()
+            updateAuthed(true)
 
         } catch (e){
             console.log('redirect back to clean login page with login failure message')
@@ -73,6 +73,7 @@ export const Login = () => {
             <div>
                 <button onClick={submitCredentials}>Submit</button>
             </div>
+            <span>{authed.toString()}</span>
         </div>
     )
 }
