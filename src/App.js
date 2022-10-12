@@ -1,15 +1,15 @@
 import React from 'react'
 
-import {AuthProvider} from "./AuthContext";
+import {AuthProvider} from "./context/AuthContext";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Login} from "./Login";
+import {Login} from "./pages/Login";
 import RouteGuard from "./RouteGuard";
-import Layout from "./Layout";
+import Layout from "./layouts/Layout";
 import About from "./pages/About";
 import {Dashboard} from "./pages/Dashboard";
-import Home from "./Home";
+import Home from "./pages/Home";
 
-export const Root = () => {
+export const App = () => {
 
     return (
         <div>
