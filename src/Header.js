@@ -7,13 +7,13 @@ export const Header = () => {
         <div>
             <ul>
                 <li>
-                    <NavLink to={"/home"} activeClassName={"active"}>Home</NavLink>
+                    <NavLink to={"/home"} style={({isActive})=> isActive ? {fontWeight: 'bold'} : {fontWeight: 'normal'} }>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/dashboard"} activeClassName={"active"}>Dashboard</NavLink>
+                    <NavLink to={"/dashboard"} style={({isActive})=> isActive ? {fontWeight: 'bold'} : {fontWeight: 'normal'} }>Dashboard</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/about"} activeClassName={"active"}>About</NavLink>
+                    <NavLink to={"/about"} style={({isActive})=> isActive ? {fontWeight: 'bold'} : {fontWeight: 'normal'} }>About</NavLink>
                 </li>
             </ul>
 

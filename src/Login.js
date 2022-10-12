@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, {useContext, useState} from 'react'
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
+import {AuthContext} from "./AuthContext";
 
 export const Login = () => {
+    const {setLoggedIn } = useContext(AuthContext)
 
     let navigate = useNavigate();
 
@@ -37,6 +39,8 @@ export const Login = () => {
                 password: password,
             })
             console.log('login =', login)
+            setLoggedIn()
+
         } catch (e){
             console.log('redirect back to clean login page with login failure message')
         }
