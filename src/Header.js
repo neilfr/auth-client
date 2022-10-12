@@ -1,12 +1,13 @@
 import React from 'react'
 import {NavLink} from "react-router-dom";
 
-export const NavigationBar = () => {
+export const Header = () => {
+
     return (
         <div>
             <ul>
                 <li>
-                    <NavLink to={"/login"} activeClassName={"active"}>Login</NavLink>
+                    <NavLink to={"/home"} activeClassName={"active"}>Home</NavLink>
                 </li>
                 <li>
                     <NavLink to={"/dashboard"} activeClassName={"active"}>Dashboard</NavLink>
@@ -15,6 +16,7 @@ export const NavigationBar = () => {
                     <NavLink to={"/about"} activeClassName={"active"}>About</NavLink>
                 </li>
             </ul>
+
         </div>
     )
 }

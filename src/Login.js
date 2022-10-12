@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import axios from "axios"
-import {redirect, useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
 
     let navigate = useNavigate();
 
-    const goDashboard = () => {
-        navigate("/dashboard")
+    const goHome = () => {
+        navigate("/home")
     }
 
     const [email, setEmail] = useState()
@@ -43,8 +43,8 @@ export const Login = () => {
 
         const user = await http.get('/api/user')
         console.log('user =', user)
-        console.log('redirect to app logged in page')
-        goDashboard()
+
+        goHome()
     }
 
     const updateEmail = (e) => {
@@ -55,13 +55,9 @@ export const Login = () => {
         setPassword(e.target.value)
     }
 
-    const logMeOut = () => {
-        console.log('logmeout')
-    }
-
     return (
         <div>
-            <h2>Home</h2>
+            <h2>Login</h2>
             <div>
                 <label htmlFor={"email"} >Email:</label>
                 <input type={"text"} value={email} onChange={updateEmail}/>
@@ -72,9 +68,6 @@ export const Login = () => {
             </div>
             <div>
                 <button onClick={submitCredentials}>Submit</button>
-            </div>
-            <div>
-                <button onClick={logMeOut}>Logout</button>
             </div>
         </div>
     )

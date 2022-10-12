@@ -21,14 +21,16 @@ export const Dashboard = () => {
 
     return (
         <div>
-            dashboard
-            {(userInfo && userInfo.data) ??
-                (<div>
-                    <label>Name:</label>
-                    <input type={"text"} value={userInfo.name} readOnly/>
-                    <label>Email:</label>
-                    <input type={"text"} value={userInfo.email} readOnly/>
-                </div>)}
+            <div>
+                <h1>Dashboard</h1>
+                {(userInfo && userInfo.data) ??
+                    (<div>
+                        <label>Name:</label>
+                        <input type={"text"} value={userInfo.name} readOnly/>
+                        <label>Email:</label>
+                        <input type={"text"} value={userInfo.email} readOnly/>
+                    </div>)}
+            </div>
         </div>
     )
 }
