@@ -1,9 +1,6 @@
-import React, {useContext} from 'react'
-import {AuthContext} from "../context/AuthContext";
+import React from 'react'
 
 const Home = () => {
-    const {authed} = useContext(AuthContext)
-    console.log('auth',authed)
     return(
         <div>
             <div>

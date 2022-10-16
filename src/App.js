@@ -13,17 +13,17 @@ export const App = () => {
 
     return (
         <div>
-            <AuthProvider>
-                <BrowserRouter>
+            <BrowserRouter>
+                <AuthProvider>
                     <Routes>
                         <Route path={"/login"} element={<Login/>}/>
                         <Route path={"/"} element={<Login/>}/>
-                        <Route path={"/about"} element={<RouteGuard><Layout><About/></Layout></RouteGuard>}/>}
+                        <Route path={"/about"} element={<RouteGuard requiredRoles={['admin']}><Layout><About/></Layout></RouteGuard>}/>}
                         <Route path={"/dashboard"} element={<RouteGuard><Layout><Dashboard/></Layout></RouteGuard>}/>
                         <Route path={"/home"} element={<RouteGuard><Layout><Home/></Layout></RouteGuard>}/>
                     </Routes>
-                </BrowserRouter>
-            </AuthProvider>
+                </AuthProvider>
+            </BrowserRouter>
         </div>
     )
 }
